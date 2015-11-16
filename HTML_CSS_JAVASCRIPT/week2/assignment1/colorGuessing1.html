@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Color Guessing Game </title>
+		<script>
+				debugger;
+				var target;
+				var guess_input_text;
+				var finished = false;
+				var colors = [ "Cyan","Black", "Beige", "LightBlue","Gray", "AliceBlue", "Tomato","Olive"].sort();
+
+				function do_game() {
+
+					target = colors[Math.floor(Math.random() * colors.length)];
+					alert(target);
+
+					while (!finished) {
+						guess_input_text = prompt("I am thinking of one of theses colors: \n \n" + colors + "\n\ \n What color am i thinking of?");
+						if (target === guess_input_text) {
+							finished = true;
+						}
+				
+					}
+
+				}
+		</script>
+	</head>
+	<body onload="do_game()"> 
+
+
+	</body>
+
+</html>
