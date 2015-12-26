@@ -13,8 +13,9 @@ var gulp = require('gulp'),
     rev = require('gulp-rev'),
     browserSync = require('browser-sync'),
     del = require('del');
-	
-	gulp.task('jshint', function() {
+
+
+gulp.task('jshint', function() {
   return gulp.src('app/scripts/**/*.js')
   .pipe(jshint())
   .pipe(jshint.reporter(stylish));
@@ -37,7 +38,7 @@ gulp.task('usemin',['jshint'], function () {
         js: [uglify(),rev()]
       }))
       .pipe(gulp.dest('dist/'));
-});
+});;
 
 // Images
 gulp.task('imagemin', function() {
@@ -72,12 +73,13 @@ gulp.task('browser-sync', ['default'], function () {
       'dist/**/*'
    ];
 
-   browserSync.init(files, {
-      server: {
-         baseDir: "dist",
-         index: "menu.html"
-      }
-   });
-        // Watch any files in dist/, reload on change
-  gulp.watch(['dist/**']).on('change', browserSync.reload);
-    });
+browserSync.init(files, {
+  server: {
+     baseDir: "dist",
+     index: "menu.html"
+  }
+});
+
+// Watch any files in dist/, reload on change
+gulp.watch(['dist/**']).on('change', browserSync.reload);
+});
