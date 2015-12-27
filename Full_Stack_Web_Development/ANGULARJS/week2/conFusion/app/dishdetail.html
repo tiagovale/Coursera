@@ -63,12 +63,17 @@
             </div>
             <div class="col-xs-9 col-xs-offset-1" ng-controller="DishCommentController">
                <ul class="list-unstyled">
+                  <blockquote ng-show="commentForm.$valid && !commentForm.$pristine">
+                     <p>{{comment.rating}}</p>
+                     <p>{{comment.comment}}</p>
+                     <footer>{{comment.author}}, {{comment.date | date:'longDate'}}</footer>
+                  </blockquote>
                   <p>Task 3: Here you include the code to show the live preview of the comment</p>
                   <p>The comment should be shown only when the form contains valid
                      information and is not pristine
                   </p>
                </ul>
-               <form class="form-horizontal" name="commentForm" ng-submit="sendComment()" novalidate>
+               <form class="form-horizontal" name="commentForm" ng-submit="submitComment()" novalidate>
                   <div class="form-group">
                      <div class="col-sm-2">
                         <label class="control-label">
@@ -113,8 +118,7 @@
                   </div>
                   <div class="form-group">
                      <div class="col-sm-offset-2 col-sm-10">
-                        
-						<button type="submit" ng-disabled="commentForm.$invalid" class="btn btn-primary">Submit Comment</button>
+                        <button type="submit" ng-disabled="commentForm.$invalid" class="btn btn-primary">Submit Comment</button>
                      </div>
                   </div>
                </form>
