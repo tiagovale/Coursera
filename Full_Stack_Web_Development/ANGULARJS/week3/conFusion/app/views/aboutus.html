@@ -55,9 +55,20 @@
         <div class="row row-content">
             <div class="col-xs-12 col-sm-9">
                 <h2>Corporate Leadership</h2>
-               <ul class="media-list">
-					<h4>Implement the Corporate Leaders List here</h4>
-               </ul>
+             <ul class="media-list">
+                    <li class="media" ng-repeat="corp in allCorporates">
+                        <div class="media-left">
+                            <img class="media-object img-thumbnail" ng-src={{corp.image}}>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">
+                                <strong>{{corp.name}}</strong>
+                                <small>{{corp.designation}}</small>
+                            </h4>
+                            <p>{{corp.description}}</p>
+                        </div>
+                    </li>
+                </ul>
 
             </div>
              <div class="col-xs-12 col-sm-3">
