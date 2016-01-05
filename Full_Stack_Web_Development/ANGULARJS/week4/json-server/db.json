@@ -221,5 +221,32 @@
       "description": "Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!"
     }
   ],
-  "feedback": []
+  "feedback": [
+    {
+      "mychannel": "Email",
+      "firstName": "dasda",
+      "lastName": "dasdas",
+      "agree": true,
+      "email": "eea@mail.com",
+      "tel": {
+        "areaCode": "3232",
+        "number": "32312312"
+      },
+      "comments": "fsdfdsfsd",
+      "id": 1
+    },
+    {
+      "mychannel": "Email",
+      "firstName": "Tiago vale",
+      "lastName": "dsada",
+      "agree": true,
+      "email": "tiago@mail.com",
+      "tel": {
+        "areaCode": "85",
+        "number": "122345"
+      },
+      "comments": "I loved it the menu!",
+      "id": 2
+    }
+  ]
 }

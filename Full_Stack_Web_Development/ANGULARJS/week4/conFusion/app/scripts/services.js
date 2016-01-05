@@ -12,34 +12,32 @@ angular.module('confusionApp')
                 }
             });
         };
-		this.getPromotions = function() {
+        this.getPromotions = function() {
             return $resource(baseURL + "promotions/:id", null, {
-                
+
             });
         };
 
     }])
 
-.factory('corporateFactory',['$resource', 'baseURL', function($resource, baseURL) {
+.factory('corporateFactory', ['$resource', 'baseURL', function($resource, baseURL) {
 
     var corpfac = {};
 
 
-		corpfac.getLeaders = function() {
-            return $resource(baseURL + "leadership/:id", null, {
-                
-            });
-        };
-   
+    corpfac.getLeaders = function() {
+        return $resource(baseURL + "leadership/:id", null, {
+
+        });
+    };
+
 
     return corpfac;
 
 }])
 
- .service('feedbackFactory', ['$resource', 'baseURL', function($resource, baseURL) {
-
-
-        this.getFeedbacks = function() {
-            return $resource(baseURL + "feedback/:id");
-        };
-    }]);
+.service('feedbackFactory', ['$resource', 'baseURL', function($resource, baseURL) {
+    this.getFeedbacks = function() {
+        return $resource(baseURL + "feedback/:id");
+    };
+}]);
