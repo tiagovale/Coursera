@@ -137,6 +137,8 @@ angular.module('confusionApp')
 
     
 	 $scope.showDish = false;
+	 $scope.showPromotion = false;
+	 $scope.showLeader = false;
 	 $scope.message="Loading ...";
 	 $scope.dish = menuFactory.getDishes().get({id:0})
 	.$promise.then(
@@ -152,6 +154,7 @@ angular.module('confusionApp')
 	.$promise.then(
 		function(response){
 			$scope.promotion = response;
+			$scope.showPromotion = true;
 			
 		},
 		function(response) {
@@ -163,6 +166,7 @@ angular.module('confusionApp')
 	.$promise.then(
 		function(response){
 			$scope.leader = response;
+			$scope.showLeader = true;
 			
 		},
 		function(response) {
