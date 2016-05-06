@@ -1,6 +1,6 @@
 angular.module('conFusion.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout,$localStorage) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $localStorage) {
 
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -10,7 +10,7 @@ angular.module('conFusion.controllers', [])
     //});
 
     // Form data for the login modal
-     $scope.loginData = $localStorage.getObject('userinfo','{}');
+    $scope.loginData = $localStorage.getObject('userinfo', '{}');
 
     // Create the login modal that we will use later
     $ionicModal.fromTemplateUrl('templates/login.html', {
@@ -32,7 +32,7 @@ angular.module('conFusion.controllers', [])
     // Perform the login action when the user submits the login form
     $scope.doLogin = function() {
         console.log('Doing login', $scope.loginData);
-		$localStorage.storeObject('userinfo',$scope.loginData);
+        $localStorage.storeObject('userinfo', $scope.loginData);
         // Simulate a login delay. Remove this and replace with your login
         // code if using a login system
         $timeout(function() {
@@ -82,8 +82,8 @@ angular.module('conFusion.controllers', [])
     $scope.showMenu = false;
     $scope.message = "Loading ...";
 
-   $scope.dishes = dishes;
-   //$scope.showMenu = true;
+    $scope.dishes = dishes;
+    //$scope.showMenu = true;
 
 
     $scope.select = function(setTab) {
@@ -163,13 +163,13 @@ angular.module('conFusion.controllers', [])
     };
 }])
 
-.controller('DishDetailController', ['$scope', '$stateParams','dish', 'menuFactory', 'favoriteFactory', '$ionicPopover', '$ionicModal', 'baseURL', function($scope, $stateParams,dish ,menuFactory, $favoriteFactory, $ionicPopover, $ionicModal, baseURL) {
+.controller('DishDetailController', ['$scope', '$stateParams', 'dish', 'menuFactory', 'favoriteFactory', '$ionicPopover', '$ionicModal', 'baseURL', function($scope, $stateParams, dish, menuFactory, $favoriteFactory, $ionicPopover, $ionicModal, baseURL) {
 
     $scope.baseURL = baseURL;
     $scope.dish = {};
     $scope.showDish = false;
     $scope.message = "Loading ...";
-$scope.dish =dish;
+    $scope.dish = dish;
 
     $scope.popover = $ionicPopover.fromTemplateUrl('templates/dish-detail-popover.html', {
         scope: $scope
@@ -236,9 +236,6 @@ $scope.dish =dish;
 
 
 
-    
-
-
 }])
 
 .controller('DishCommentController', ['$scope', 'menuFactory', function($scope, menuFactory) {
@@ -273,15 +270,15 @@ $scope.dish =dish;
 
 // implement the IndexController and About Controller here
 
-.controller('IndexController', ['$scope', 'dish', 'promotion', 'leader', 'baseURL', function ($scope, dish, promotion, leader, baseURL) {
+.controller('IndexController', ['$scope', 'dish', 'promotion', 'leader', 'baseURL', function($scope, dish, promotion, leader, baseURL) {
 
     $scope.baseURL = baseURL;
-    $scope.leader =leader;
+    $scope.leader = leader;
 
     $scope.showDish = false;
     $scope.message = "Loading ...";
 
-    $scope.dish =dish
+    $scope.dish = dish
 
     $scope.promotion = promotion;
 
@@ -294,7 +291,7 @@ $scope.dish =dish;
 
 }])
 
-.controller('FavoritesController', ['$scope', 'dishes','favorites' ,'favoriteFactory', 'baseURL', '$ionicListDelegate', '$ionicPopup', '$ionicLoading', '$timeout', function($scope, dishes,favorites ,favoriteFactory, baseURL, $ionicListDelegate, $ionicPopup, $ionicLoading, $timeout) {
+.controller('FavoritesController', ['$scope', 'dishes', 'favorites', 'favoriteFactory', 'baseURL', '$ionicListDelegate', '$ionicPopup', '$ionicLoading', '$timeout', function($scope, dishes, favorites, favoriteFactory, baseURL, $ionicListDelegate, $ionicPopup, $ionicLoading, $timeout) {
 
     $scope.baseURL = baseURL;
     $scope.shouldShowDelete = false;
